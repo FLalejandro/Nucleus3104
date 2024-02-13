@@ -130,3 +130,116 @@ ul li {
     display: none;
   }
 }
+
+
+h1 {
+    margin-bottom: 50px;
+}
+
+p {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+footer {
+    margin-top: 710px;
+    text-align: left;
+}
+
+/* Link styles */
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+
+/* Bottom container styles */
+.bottom-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* List styles */
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul li {
+  display: inline;
+  margin-right: 10px;
+}
+
+/* Media query for small screens */
+@media screen and (max-width: 768px) {
+  .col {
+    width: 100%;
+  }
+
+  .hide-md-lg {
+    display: none;
+  }
+}
+
+.navbar ul {
+    list-style: none;
+    background-color: #333;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.navbar ul li {
+    display: inline;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: white;
+    padding: 15px 20px;
+    display: inline-block;
+}
+
+.navbar ul li a.active {
+    background-color: #666;
+}
+
+.header h1 {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.header h2 {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.calendar {
+    margin: auto;
+    max-width: 600px;
+
+}
+
+.month h3 {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.event {
+    background-color: #333;
+    display: block;
+    padding: 5px;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+.clickable:hover {
+    background-color: #555;
+}
