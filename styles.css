@@ -12,8 +12,19 @@ body {
   background-color: #f2f2f2;
 }
 
-/* Container styles */
-.container {
+/* Register Container */
+.container-register {
+  max-width: 400px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 50px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Login Container */
+.container-login {
   max-width: 400px;
   margin: 0 auto;
   background-color: #ffffff;
@@ -242,4 +253,77 @@ ul li {
 
 .clickable:hover {
     background-color: #555;
+}
+
+/* Styling for the authentication container */
+.auth-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  flex-wrap: wrap;
+  margin-top: 50px;
+}
+
+/* Login Container on the right */
+.container-login {
+  order: 2;
+  flex-basis: 48%;
+}
+
+/* Register Container on the left */
+.container-register {
+  order: 1;
+  flex-basis: 48%;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .container-login,
+  .container-register {
+    flex-basis: 100%;
+    margin-bottom: 20px;
+  }
+
+/* Notification Popups */
+#message {
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: center;
+}
+
+#message.green {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+#message.red {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.modal-forgotpass {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content-forgotpass {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
 }
