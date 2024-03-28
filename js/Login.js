@@ -1,5 +1,7 @@
 // Registration Stuff
 document.addEventListener("DOMContentLoaded", function() {
+
+     updateLoginIcon();
     // Handle the registration form submission
     var registrationForm = document.getElementById("registrationForm");
     if (registrationForm) {
@@ -50,8 +52,10 @@ document.addEventListener("DOMContentLoaded", function() {
                     alert("Login successful");
                     console.log("User authenticated:", userObj.username); // For debugging, can be removed
 
-                    // Redirect the user or change UI state as needed
-                    // location.href = 'home.html';
+                    // This is a flag that checks if a user is logged in
+                    localStorage.setItem('loggedIn', 'true');
+                    updateLoginIcon();
+
                 } else {
                     alert("Incorrect password");
                 }
@@ -94,4 +98,18 @@ window.retrievePassword = function() {
     }
 };
 
-// New Stuff goes here
+function updateLoginIcon() {
+    const loginIcon = document.getElementById('loginIcon');
+    if (localStorage.getItem('loggedIn') === 'true') {
+        // User is logged in, change the icon to the logged-in version
+        loginIcon.src = 'images/AccountLogin_LI.png';
+    } else {
+        // User is not logged in, show the default (logged-out) icon
+        loginIcon.src = 'images/AccountLogin_NLI.png';
+    }
+}
+
+function logout() {
+    localStorage.removeItem('loggedIn');
+    updateLoginIcon();
+}

@@ -196,29 +196,39 @@ ul li {
     display: none;
   }
 }
+/* Navbar styles */
+.navbar {
+  background-color: #333;
+  padding: 20px;
+  overflow: hidden;
+}
 
 .navbar ul {
-    list-style: none;
-    background-color: #333;
-    overflow: hidden;
-    padding: 0;
-    margin: 0;
-    text-align: center;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex; /* Use flexbox for alignment */
+  align-items: center;
 }
 
 .navbar ul li {
-    display: inline;
+  margin-right: 20px;
 }
 
 .navbar ul li a {
-    text-decoration: none;
-    color: white;
-    padding: 15px 20px;
-    display: inline-block;
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
 }
 
-.navbar ul li a.active {
-    background-color: #666;
+/* Right align the login icon */
+.navbar .login-icon {
+  margin-left: auto;
+}
+
+.navbar .login-icon a img {
+  height: 30px;
+  width: auto;
 }
 
 .header h1 {
@@ -432,27 +442,6 @@ body {
   font-family: Arial, sans-serif;
   background-color: #f8f8f8;
   color: #333;
-}
-
-/* Navbar styles */
-.navbar {
-  background-color: #333;
-  padding: 20px;
-}
-
-.navbar ul {
-  list-style-type: none;
-}
-
-.navbar ul li {
-  display: inline-block;
-  margin-right: 20px;
-}
-
-.navbar ul li a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 18px;
 }
 
 /* Heading styles */

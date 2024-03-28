@@ -1,5 +1,3 @@
-// script.js
-
 // Define an array to store events
 // eslint-disable-next-line
 
@@ -61,6 +59,12 @@ function deleteEvent(eventId) {
 // Function to display reminders
 function displayReminders() {
 	reminderList.innerHTML = "";
+
+	    // Alejandro 03/14 - Added this to sort events by date
+        events.sort(function(a, b) {
+            return new Date(a.date) - new Date(b.date);
+        });
+
 	for (let i = 0; i < events.length; i++) {
 		let event = events[i];
 		let eventDate = new Date(event.date);
