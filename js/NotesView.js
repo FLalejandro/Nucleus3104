@@ -1,3 +1,5 @@
+import NotesAPI from './NotesAPI.js';
+
 export default class NotesView {
     constructor(root, { onNoteSelect, onNoteAdd, onNoteEdit, onNoteDelete } = {}) {
         this.root = root;
@@ -13,6 +15,7 @@ export default class NotesView {
             <div class="notes__preview">
                 <input class="notes__title" type="text" placeholder="New Note...">
                 <textarea class="notes__body">Take Note...</textarea>
+                <button class="notes__delete" style="display: none;">Delete Note</button>
             </div>
         `;
 
@@ -34,6 +37,14 @@ export default class NotesView {
         });
 
         this.updateNotePreviewVisibility(false);
+
+        this.root.querySelector(".notes__delete").addEventListener("click", () => {
+            const doDelete = confirm("Are you sure you want to delete this note?");
+            if (doDelete) {
+                const selectedNoteId = this.root.querySelector(".notes__list-item--selected").dataset.noteId;
+                this.onNoteDelete(selectedNoteId);
+            }
+        });
     }
 
     _createListItemHTML(id, title, body, updated) {
@@ -96,3 +107,49 @@ export default class NotesView {
         this.root.querySelector(".notes__preview").style.visibility = visible ? "visible" : "hidden";
     }
 }
+
+const root = document.getElementById("app");
+const notesView = new NotesView(root, {
+    onNoteSelect: id => {
+        const note = NotesAPI.getNoteById(id);
+        notesView.updateActiveNote(note);
+        root.querySelector(".notes__delete").style.display = "block"; // Show the delete button when a note is selected
+    },
+    onNoteAdd: () => {
+        const title = root.querySelector(".notes__title").value.trim();
+        const body = root.querySelector(".notes__body").value.trim();
+        const color = "#ffffff"; // Default color, you can modify it according to your requirement
+        const newNote = {
+            title,
+            body,
+            color
+        };
+        NotesAPI.saveNote(newNote);
+        const notes = NotesAPI.getAllNotes();
+        notesView.updateNoteList(notes);
+    },
+    onNoteEdit: (title, body) => {
+        const selectedNoteId = root.querySelector(".notes__list-item--selected").dataset.noteId;
+        const updatedNote = {
+            id: selectedNoteId,
+            title,
+            body
+        };
+        NotesAPI.saveNote(updatedNote);
+        const notes = NotesAPI.getAllNotes();
+        notesView.updateNoteList(notes);
+    },
+    onNoteDelete: id => {
+        NotesAPI.deleteNote(id);
+        const notes = NotesAPI.getAllNotes();
+        notesView.updateNoteList(notes);
+        notesView.updateActiveNote({
+            title: "",
+            body: ""
+        });
+        root.querySelector(".notes__delete").style.display = "none"; // Hide the delete button after deleting the note
+    }
+});
+
+const notes = NotesAPI.getAllNotes();
+notesView.updateNoteList(notes);
