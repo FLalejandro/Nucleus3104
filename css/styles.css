@@ -196,9 +196,10 @@ ul li {
     display: none;
   }
 }
-/* Navbar styles */
+
+/*//////////////////////////////////// Navbar styles /////////////////////////////////////////////////////////////////*/
 .navbar {
-  background-color: #333;
+  background-color: #424242;
   padding: 20px;
   overflow: hidden;
 }
@@ -216,9 +217,14 @@ ul li {
 }
 
 .navbar ul li a {
-  color: #fff;
+  color: #fdfdfd;
   text-decoration: none;
   font-size: 18px;
+  transition: font-size 0.3s ease; /* Adding transition for smooth effect */
+}
+
+.navbar ul li a:hover {
+  font-size: 20px; /* Increase font size on hover */
 }
 
 /* Right align the login icon */
@@ -542,3 +548,4 @@ h1 {
   margin: 10px;
   resize: none;
 }
+
