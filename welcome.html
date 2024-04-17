@@ -5,6 +5,8 @@
     <title>nucleus - Welcome</title>
     <!-- Links our CSS file -->
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/buttonStyle.css">
+    <link rel="stylesheet" href="css/darkMode.css">
     <script src="js/Login.js" defer></script>
 </head>
 <body>
@@ -34,5 +36,15 @@
     <footer>
         <p>Copyright &copy; 2023 - nucleus</p>
     </footer>
+    
+    <button onclick="myFunction()" class="button1">Toggle dark mode</button>
+    
+    <script>
+        function myFunction() {
+            var element = document.body;
+            element.classList.toggle("dark-mode");
+            }
+    </script>
+
 </body>
 </html>
