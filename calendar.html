@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="css/styles.css">
     <!-- Calender CSS file-->
     <link rel="stylesheet" href="css/calenderStyle.css">
+    <link rel="stylesheet" href="css/calenderandloginDarkMode.css">
+    <link rel="stylesheet" href="css/buttonStyle.css">
 	<script src="js/Login.js" defer></script>
 </head>
 
@@ -107,6 +109,15 @@
     </footer>
 	<!-- Include the JavaScript file for the calendar functionality -->
 	<script src="./js/dynamicScript.js"></script>
+    
+    <button onclick="myFunction()" class="button1">Toggle dark mode</button>
+    <script>
+        function myFunction() {
+            var element = document.body;
+            element.classList.toggle("dark-mode");
+            }
+    </script>
+    
 </body>
 
 </html>
