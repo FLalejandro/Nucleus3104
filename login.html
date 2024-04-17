@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <title>nucleus - Login/Register</title>
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/calenderandloginDarkMode.css">
+    <link rel="stylesheet" href="css/buttonStyle.css">
   <script src="js/Login.js" defer></script>
 </head>
 <body>
@@ -76,6 +78,16 @@
     <button onclick="retrievePassword()">Retrieve Password</button>
   </div>
 </div>
+    
+    <button onclick="myFunction()" class="button1">Toggle dark mode</button>
+    
+    <script>
+        function myFunction() {
+            var element = document.body;
+            element.classList.toggle("dark-mode");
+            }
+    </script>
+    
 
 </body>
 </html>
