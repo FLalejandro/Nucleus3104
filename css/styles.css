@@ -32,6 +32,7 @@ body {
 .navbar li a {
   display: block;
   color: white;
+  font-weight: bold;
   text-align: center;
   padding: 14px 20px;
   text-decoration: none;
@@ -39,7 +40,8 @@ body {
 
 .navbar li a:hover,
 .navbar .active {
-  background-color: #014f6a;
+  background-color: #FCE181; /* Hover color for main nav bar */
+  color: #000; /* text color would change with hover*/
   border-radius: 10px; /* Add rounded corners */
 }
 
@@ -51,7 +53,7 @@ body {
 
 /* Typography and spacing for content */
 h1 {
-  color: #005a87;
+  color: #2d5569;
   text-align: center;
   margin-top: 50px;
 }
@@ -68,16 +70,6 @@ ul {
   list-style-position: inside;
 }
 
-/* Footer styling */
-footer {
-  /*background-color: #1c87c9; */
-  color: rgb(0, 0, 0);
-  text-align: center;
-  padding: 0px;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-}
 
 /* Register Container */
 .container-register {
@@ -142,7 +134,7 @@ input[type="submit"]:hover {
   display: block;
   text-align: center;
   background-color: #007bff;
-  color: white;
+  color: rgb(0, 0, 0);
   padding: 10px 0;
   margin-bottom: 15px;
   border: none;
@@ -164,28 +156,6 @@ a:hover {
   text-decoration: underline;
 }
 
-/* Social media button styles */
-.fb,
-.google {
-  display: block;
-  text-align: center;
-  background-color: #3b5998;
-  color: white;
-  padding: 10px 0;
-  margin-bottom: 15px;
-  border: none;
-  border-radius: 5px;
-  text-decoration: none;
-}
-
-.google {
-  background-color: #db4437;
-}
-
-.fb:hover,
-.google:hover {
-  opacity: 0.8;
-}
 
 /* Bottom container styles */
 .bottom-container {
@@ -271,7 +241,7 @@ ul li {
 
 /*//////////////////////////////////// Navbar styles /////////////////////////////////////////////////////////////////*/
 .navbar {
-  background-color: #424242;
+  background-color: #026670;  /* main nav bar color */
   padding: 20px;
   overflow: hidden;
 }
@@ -289,7 +259,7 @@ ul li {
 }
 
 .navbar ul li a {
-  color: #fdfdfd;
+  color: #fdfdfd; /*main nav bar text */
   text-decoration: none;
   font-size: 18px;
   transition: font-size 0.3s ease;
@@ -464,7 +434,7 @@ h1 {
   text-align: center;
   margin-top: 10px;
   font-size: 36px;
-  color: #333;
+  color: #000000;
 }
 
 /* Main notes container styles */
@@ -495,6 +465,7 @@ h1 {
   width: 100%;
   padding: 10px;
   background-color: #000000;
+  font-weight: bold;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -505,14 +476,16 @@ h1 {
 
 /* Hover effect for Add button */
 .notes__add:hover {
-  background-color: #85bc68; /* Change the background color on hover */
+  background-color: #FCE181; /* Change the background color on hover */
+  font-weight: bold; /* Make text bold*/
+  color: #000; /*Change color to black*/
 }
 
 /* Individual note item styles */
 .notes__list-item {
   position: relative; /* Needed for absolute positioning of the trash can icon */
   padding: 15px;
-  border-bottom: 1px solid #3b5998;
+  border-bottom: 1px solid #026670;
   cursor: pointer;
   transition: transform 0.3s ease; /* Adding transition for smooth size change */
   /*overflow: hidden; /* Ensures the delete icon remains within the container */
@@ -539,8 +512,10 @@ h1 {
 .notes__preview {
   width: 65%;
   background-color: #fff;
+  padding: 10px;
   border-radius: 8px;
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
 }
 
 /* Trash can icon */
@@ -560,7 +535,7 @@ h1 {
 
 /* Note title input styles */
 .notes__title {
-  width: calc(100% - 20px);
+  width: 60%;
   padding: 10px;
   font-size: 20px;
   font-weight: bold;
@@ -571,10 +546,10 @@ h1 {
 
 /* Note body textarea styles */
 .notes__body {
-  width: calc(100% - 20px);
+  width: 60%;
   padding: 10px;
   font-size: 16px;
-  border: none;
+  border-radius: 8px;
   margin: 10px;
-  resize: none;
+  resize: auto;
 }
