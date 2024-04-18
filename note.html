@@ -1,15 +1,17 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
     <!-- Title refers to the label the Website Tab gets -->
     <title>nucleus - notes</title>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <!-- Links our CSS file-->
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/darkMode.css">
-    <link rel="stylesheet" href="css/buttonStyle.css">
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/darkMode.css" />
+    <link rel="stylesheet" href="css/buttonStyle.css" />
     <script src="js/Login.js" defer></script>
-    <script src="js/main.js" type="module"></script> 
+    <script src="js/main.js" type="module"></script>
+    <script src="js/navbar.js" defer></script>
+    <script src="js/darkMode.js" defer></script>
     <!--Script referenced in https://www.youtube.com/watch?v=01YKQmia2Jw-->
 </head>
 <body>
@@ -18,9 +20,30 @@
         <li><a href="welcome.html">Welcome</a></li>
         <li><a href="home.html">Home</a></li>
         <li><a href="calendar.html">Calendar</a></li>
-        <li><a href="note.html" class="active">Notes</a></li>
-        <li class="login-icon"><a href="login.html"><img id="loginIcon" src="images/AccountLogin_NLI.png" alt="Login/Register"></a></li>
+        <li><a href="note.html">Notes</a></li>
+        <li class="login-icon">
+            <a href="login.html"
+            ><img
+                    id="loginIcon"
+                    src="images/AccountLogin_NLI.png"
+                    alt="Login/Register"
+            /></a>
+        </li>
+        <li class="hamburger-icon">
+            <a href="javascript:void(0)"
+            ><img
+                    id="hamburgerIcon"
+                    src="images/LightModeHamburgerIcon.png"
+                    alt="Menu"
+                    onclick="toggleDropdown()"
+            /></a>
+        </li>
     </ul>
+</div>
+<!-- Dropdown Menu -->
+<div id="hamburgerDropdown" class="dropdown-content" style="display: none">
+    <a href="javascript:void(0)" id="darkModeToggle">Toggle Dark Mode</a>
+    <a href="javascript:void(0)" onclick="logout()">Log Out</a>
 </div>
 <h1>nucleus</h1>
 <div class="notes" id="app">
@@ -33,23 +56,26 @@
                 <div class="notes__small-updated">Saturday 7:20pm</div>
                 <!-- Delete icon -->
                 <div class="delete-icon">
-                    <img src="images/Trash_bin-removebg-preview.png" alt="Delete Note">
+                    <img
+                            src="images/Trash_bin-removebg-preview.png"
+                            alt="Delete Note"
+                    />
                 </div>
             </div>
         </div>
     </div>
     <div class="notes__preview">
-        <input class="notes__title" type="text" placeholder="Enter a title...">
+        <input
+                class="notes__title"
+                type="text"
+                placeholder="Enter a title..."
+        />
         <textarea class="notes__body">I am the notes body...</textarea>
-    </div> 
+    </div>
 </div>
-    <button onclick="myFunction()" class="button1">Toggle dark mode</button>
-    
-    <script>
-        function myFunction() {
-            var element = document.body;
-            element.classList.toggle("dark-mode");
-            }
-    </script>
+
+<footer>
+    <p>Copyright &copy; 2023 - nucleus</p>
+</footer>
 </body>
 </html>

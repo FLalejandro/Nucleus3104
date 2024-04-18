@@ -1,50 +1,71 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <title>nucleus - Welcome</title>
     <!-- Links our CSS file -->
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/buttonStyle.css">
-    <link rel="stylesheet" href="css/darkMode.css">
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/buttonStyle.css" />
+    <link rel="stylesheet" href="css/darkMode.css" />
     <script src="js/Login.js" defer></script>
+    <script src="js/navbar.js" defer></script>
+    <script src="js/darkMode.js" defer></script>
 </head>
 <body>
-    <div class="navbar">
-        <ul>
-            <li><a href="welcome.html" class="active" >Welcome</a></li>
-            <li><a href="home.html">Home</a></li>
-            <li><a href="calendar.html">Calendar</a></li>
-            <li><a href="note.html" >Notes</a></li>
-            <li class="login-icon"><a href="login.html"><img id="loginIcon" src="images/AccountLogin_NLI.png" alt="Login/Register"></a></li>
-        </ul>
-    </div>
-    <h1>nucleus</h1>
-    <img src="images/nucleus.gif" alt="nucleus" class="center">
-    <p>Productivity made simple</p>
-    <p>A true one-stop shop for all of your professional and academic needs</p>
-    <p>Welcome to nucleus, your go-to platform for organizing your tasks, managing your time effectively, and staying on top of your commitments. Whether you're a student, a professional, or anyone looking to enhance productivity, nucleus has got you covered.</p>
-    <p>With nucleus, you can:</p>
+<div class="navbar">
     <ul>
-        <li>Organize your tasks and to-dos efficiently</li>
-        <li>Plan your schedule and manage your calendar seamlessly</li>
-        <li>Create and manage notes for your projects, ideas, and lectures</li>
-        <li>Stay focused and boost your productivity with our intuitive interface</li>
-        <li>Access your tasks and notes from anywhere, anytime, on any device</li>
+        <li><a href="welcome.html">Welcome</a></li>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="calendar.html">Calendar</a></li>
+        <li><a href="note.html">Notes</a></li>
+        <li class="login-icon">
+            <a href="login.html"
+            ><img
+                    id="loginIcon"
+                    src="images/AccountLogin_NLI.png"
+                    alt="Login/Register"
+            /></a>
+        </li>
+        <li class="hamburger-icon">
+            <a href="javascript:void(0)"
+            ><img
+                    id="hamburgerIcon"
+                    src="images/LightModeHamburgerIcon.png"
+                    alt="Menu"
+                    onclick="toggleDropdown()"
+            /></a>
+        </li>
     </ul>
-    <p>Start your journey towards enhanced productivity with nucleus today!</p>
-    <footer>
-        <p>Copyright &copy; 2023 - nucleus</p>
-    </footer>
-    
-    <button onclick="myFunction()" class="button1">Toggle dark mode</button>
-    
-    <script>
-        function myFunction() {
-            var element = document.body;
-            element.classList.toggle("dark-mode");
-            }
-    </script>
+</div>
+<!-- Dropdown Menu -->
+<div id="hamburgerDropdown" class="dropdown-content" style="display: none">
+    <a href="javascript:void(0)" id="darkModeToggle">Toggle Dark Mode</a>
+    <a href="javascript:void(0)" onclick="logout()">Log Out</a>
+</div>
 
+<h1>nucleus</h1>
+<img src="images/nucleus.gif" alt="nucleus" class="center" />
+<p>Productivity made simple</p>
+<p>A true one-stop shop for all of your professional and academic needs</p>
+<p>
+    Welcome to nucleus, your go-to platform for organizing your tasks,
+    managing your time effectively, and staying on top of your commitments.
+    Whether you're a student, a professional, or anyone looking to enhance
+    productivity, nucleus has got you covered.
+</p>
+<p>With nucleus, you can:</p>
+<ul>
+    <li>Organize your tasks and to-dos efficiently</li>
+    <li>Plan your schedule and manage your calendar seamlessly</li>
+    <li>Create and manage notes for your projects, ideas, and lectures</li>
+    <li>
+        Stay focused and boost your productivity with our intuitive interface
+    </li>
+    <li>Access your tasks and notes from anywhere, anytime, on any device</li>
+</ul>
+<p>Start your journey towards enhanced productivity with nucleus today!</p>
+<footer>
+    <p>Copyright &copy; 2023 - nucleus</p>
+</footer>
 </body>
 </html>

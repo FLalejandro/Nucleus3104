@@ -1,44 +1,59 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
     <!-- Title refers to the label the Website Tab gets -->
     <title>nucleus - Home</title>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <!-- Links our CSS file-->
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/homeButtons.css">
-    <link rel="stylesheet" href="css/darkMode.css">
-    <link rel="stylesheet" href="css/buttonStyle.css">
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/homeButtons.css" />
+    <link rel="stylesheet" href="css/darkMode.css" />
+    <link rel="stylesheet" href="css/buttonStyle.css" />
     <script src="js/Login.js" defer></script>
+    <script src="js/navbar.js" defer></script>
+    <script src="js/darkMode.js" defer></script>
 </head>
+<body>
 <div class="navbar">
     <ul>
         <li><a href="welcome.html">Welcome</a></li>
-        <li><a href="home.html" class="active">Home</a></li>
+        <li><a href="home.html">Home</a></li>
         <li><a href="calendar.html">Calendar</a></li>
-        <li><a href="note.html" >Notes</a></li>
-        <li class="login-icon"><a href="login.html"><img id="loginIcon" src="images/AccountLogin_NLI.png" alt="Login/Register"></a></li>
+        <li><a href="note.html">Notes</a></li>
+        <li class="login-icon">
+            <a href="login.html"
+            ><img
+                    id="loginIcon"
+                    src="images/AccountLogin_NLI.png"
+                    alt="Login/Register"
+            /></a>
+        </li>
+        <li class="hamburger-icon">
+            <a href="javascript:void(0)"
+            ><img
+                    id="hamburgerIcon"
+                    src="images/LightModeHamburgerIcon.png"
+                    alt="Menu"
+                    onclick="toggleDropdown()"
+            /></a>
+        </li>
     </ul>
 </div>
-<h1>nucleus</h1>
-<p>All about you</p>
-<p>Check your calendar, to-do list, and notepads here!</p>
-
-<a href="calendar.html" class="calButton">Calendar</a>
-<a href="note.html" class="notesButton">Notes</a>
-    
+<!-- Dropdown Menu -->
+<div id="hamburgerDropdown" class="dropdown-content" style="display: none">
+    <a href="javascript:void(0)" id="darkModeToggle">Toggle Dark Mode</a>
+    <a href="javascript:void(0)" onclick="logout()">Log Out</a>
 </div>
+<div>
+    <h1>nucleus</h1>
+    <p>All about you</p>
+    <p>Check your calendar, to-do list, and notepads here!</p>
+
+    <a href="calendar.html" class="calButton">Calendar</a>
+    <a href="note.html" class="notesButton">Notes</a>
+</div>
+</body>
 <footer>
     <p>Copyright &copy; 2023 - nucleus</p>
 </footer>
-
-<button onclick="myFunction()" class="button1">Toggle dark mode</button>
-    
-    <script>
-        function myFunction() {
-            var element = document.body;
-            element.classList.toggle("dark-mode");
-            }
-    </script>
-</body>
 </html>

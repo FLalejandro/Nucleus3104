@@ -1,12 +1,14 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>nucleus - Login/Register</title>
-  <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="css/calenderandloginDarkMode.css">
-    <link rel="stylesheet" href="css/buttonStyle.css">
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/darkMode.css" />
+  <link rel="stylesheet" href="css/buttonStyle.css" />
   <script src="js/Login.js" defer></script>
+  <script src="js/navbar.js" defer></script>
+  <script src="js/darkMode.js" defer></script>
 </head>
 <body>
 <div class="navbar">
@@ -14,41 +16,57 @@
     <li><a href="welcome.html">Welcome</a></li>
     <li><a href="home.html">Home</a></li>
     <li><a href="calendar.html">Calendar</a></li>
-    <li><a href="note.html" >Notes</a></li>
-    <li class="login-icon"><a href="login.html"><img id="loginIcon" src="images/AccountLogin_NLI.png" alt="Login/Register"></a></li>
+    <li><a href="note.html">Notes</a></li>
+    <li class="login-icon">
+      <a href="login.html"
+      ><img
+              id="loginIcon"
+              src="images/AccountLogin_NLI.png"
+              alt="Login/Register"
+      /></a>
+    </li>
+    <li class="hamburger-icon">
+      <a href="javascript:void(0)"
+      ><img
+              id="hamburgerIcon"
+              src="images/LightModeHamburgerIcon.png"
+              alt="Menu"
+              onclick="toggleDropdown()"
+      /></a>
+    </li>
   </ul>
+</div>
+<!-- Dropdown Menu -->
+<div id="hamburgerDropdown" class="dropdown-content" style="display: none">
+  <a href="javascript:void(0)" id="darkModeToggle">Toggle Dark Mode</a>
+  <a href="javascript:void(0)" onclick="logout()">Log Out</a>
 </div>
 
 <h1>nucleus</h1>
-
 <div class="auth-container">
   <!-- Login Section -->
   <div class="container-login">
     <form id="loginForm">
-    <div class="row">
-        <h2 style="text-align:center">Login</h2>
+      <div class="row">
+        <h2 style="text-align: center">Login</h2>
         <div class="col">
-          <a href="#" class="fb btn">
-            <i class="fa fa-facebook fa-fw"></i> Continue with Facebook
-          </a>
-          <a href="#" class="google btn">
-            <i class="fa fa-google fa-fw"></i> Continue with Google
-          </a>
-        </div>
-        <div class="col">
-          <div class="hide-md-lg">
-            <p>Or sign in with email:</p>
-          </div>
-          <input type="text" name="email" placeholder="E-Mail" required>
-          <input type="password" name="password" placeholder="Password" required>
-          <input type="submit" value="Login">
+          <input type="text" name="email" placeholder="E-Mail" required />
+          <input
+                  type="password"
+                  name="password"
+                  placeholder="Password"
+                  required
+          />
+          <input type="submit" value="Login" />
         </div>
       </div>
     </form>
     <div class="bottom-container">
       <div class="row">
         <div class="col">
-          <a href="#" id="forgotPassword" style="color:white" class="btn">Forgot password?</a>
+          <a href="#" id="forgotPassword" style="color: white" class="btn"
+          >Forgot password?</a
+          >
         </div>
       </div>
     </div>
@@ -56,38 +74,57 @@
 
   <!-- Registration Section -->
   <div class="container-register">
-    <h2 style="text-align:center">Register Here!</h2>
+    <h2 style="text-align: center">Register Here!</h2>
     <div id="register"></div>
     <form id="registrationForm">
-      <input type="text" name="regUsername" placeholder="Username" required>
-      <input type="email" name="regEmail" placeholder="E-Mail" required>
-      <input type="password" id="regPassword" name="reg_password" placeholder="Password" required>
-      <input type="password" id="confirmPassword" name="confirm_password" placeholder="Confirm Password" required>
-      <input type="submit" value="Register">
+      <input
+              type="text"
+              name="regUsername"
+              placeholder="Username"
+              required
+      />
+      <input type="email" name="regEmail" placeholder="E-Mail" required />
+      <input
+              type="password"
+              id="regPassword"
+              name="reg_password"
+              placeholder="Password"
+              required
+      />
+      <input
+              type="password"
+              id="confirmPassword"
+              name="confirm_password"
+              placeholder="Confirm Password"
+              required
+      />
+      <input type="submit" value="Register" />
     </form>
   </div>
 </div>
 
 <!-- Modal for Forgot Password Feature -->
-<div id="forgotPasswordModal" class="modal-forgotpass" style="display:none;">
+<div
+        id="forgotPasswordModal"
+        class="modal-forgotpass"
+        style="display: none"
+>
   <div class="modal-content-forgotpass">
     <span class="close" onclick="closeModal()">&times;</span>
     <h2>Forgot Password</h2>
-    <input type="text" id="forgotUsername" placeholder="Username" required>
-    <input type="email" id="forgotEmail" placeholder="Email" required>
+    <input
+            type="text"
+            id="forgotUsername"
+            placeholder="Username"
+            required
+    />
+    <input type="email" id="forgotEmail" placeholder="Email" required />
     <button onclick="retrievePassword()">Retrieve Password</button>
   </div>
 </div>
-    
-    <button onclick="myFunction()" class="button1">Toggle dark mode</button>
-    
-    <script>
-        function myFunction() {
-            var element = document.body;
-            element.classList.toggle("dark-mode");
-            }
-    </script>
-    
 
+<footer>
+  <p>Copyright &copy; 2023 - nucleus</p>
+</footer>
 </body>
 </html>
