@@ -1,6 +1,6 @@
 .calButton {
-  background-color: #1c87c9;
-  border: none;
+  background-color: #526d82;
+  border-radius: 8px;
   color: white;
   padding: 20px 34px;
   text-align: center;
@@ -14,8 +14,8 @@
 }
 
 .notesButton {
-  background-color: #1c87c9;
-  border: none;
+  background-color: #526d82;
+  border-radius: 8px;
   color: white;
   padding: 20px 34px;
   text-align: center;
