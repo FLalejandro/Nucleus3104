@@ -1,4 +1,109 @@
-.dark-mode {
-  background-color: black;
+
+/*MAIN WEBSITE COLOR (NAV BAR, BACKGROUND, FONT COLOR) */
+.dark-mode { /*Background color & Text Color*/
+  background-color: #111821;
   color: white;
+
+}
+
+.dark-mode .navbar li a:hover, /*Hover effects in nav bar */
+.navbar .active {
+  background-color: #526d82; /* Hover color for main nav bar */
+  color: #ffffff; /* text color would change with hover*/
+}
+
+.dark-mode .navbar { /* Nav bar color */
+  background-color: #27374d;  /* main nav bar color */
+}
+
+.dark-mode .navbar ul li a { /*Text color in nav bar */
+  color: #9db2bf;
+}
+
+.dark-mode h1 {
+  color: #dde6ed;
+}
+
+
+/*NOTES SECTION COLOR */
+
+.dark-mode .notes__add { /* "Add note" color */
+  background-color: #27374d;
+  color: #9db2bf;
+}
+
+.dark-mode .notes__add:hover{ /*"Add note" hover color change */
+  background-color: #526d82;
+  color: #ffffff;
+}
+
+.dark-mode .notes__sidebar {  /*Colors for side bar where notes are stored */
+  background-color: #9db2bf;
+  color: #000;
+  font-weight: bold;
+}
+
+.dark-mode .notes__small-updated {
+  color: #27374d99; /* Change the color of the date */
+}
+
+.dark-mode .notes__preview {
+  background-color: #9db2bf; /* Color for the background where note are written*/
+}
+
+
+/*CALENDAR SECTION COLORS */
+
+.dark-mode .container-calendar { /*Color for container */
+  background: #9db2bf;
+}
+
+.dark-mode #event-section {
+  background-color: #27374d;
+}
+
+.dark-mode .container-calendar #left h1 {
+  color: #9db2bf;
+  text-align: center;
+  background-color: #27374d;
+}
+
+.dark-mode #event-section h3 {
+  color: #9db2bf;
+}
+
+.dark-mode #event-section button {
+  background: #9db2bf;
+  font-weight: bold;
+}
+
+.dark-mode #reminder-section {
+  padding: 10px;
+  background: #27374d;
+}
+
+.dark-mode #reminder-section h3 {
+  color: #9db2bf;
+}
+
+.dark-mode #reminderList li {
+  background-color: #000000;
+}
+
+.dark-mode .date-picker.selected {
+  background-color: #27374d;
+  font-weight: bold;
+  outline: 1px dashed #ff0000;
+}
+
+.dark-mode .button-container-calendar button {
+  background: #27374d;
+  color: #fff;
+  border: 1px solid #27374d;
+}
+
+.dark-mode .date-picker:hover {
+  background-color: #27374d;
+  color: white;
+  cursor: pointer;
 }
