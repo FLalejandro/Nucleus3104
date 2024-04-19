@@ -1,11 +1,13 @@
 document.addEventListener("DOMContentLoaded", function() {
   const bodyElement = document.body;
   const hamburgerIcon = document.getElementById('hamburgerIcon');
+  const logo = document.getElementById('logo');
   const darkModeToggleLink = document.querySelector("#hamburgerDropdown a");
 
   function setDarkMode(state) {
     bodyElement.classList[state ? 'add' : 'remove']("dark-mode");
     hamburgerIcon.src = state ? 'images/DarkModeHamburgerIcon.png' : 'images/LightModeHamburgerIcon.png';
+    logo.src = state ? 'images/darklogo.png': 'images/logo.png';
     if (darkModeToggleLink) {
       darkModeToggleLink.textContent = state ? "Light Mode" : "Dark Mode";
     }
